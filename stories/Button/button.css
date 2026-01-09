@@ -1,95 +1,5 @@
-.storybook-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: 0;
-  border-radius: 3em;
-
-  text-align: center;
-  font-family: "Helvetica Neue";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%; /* 24px */
-  letter-spacing: -0.3px;
-  transition: all 0.2s ease;
-}
-
-/* Variant Styles */
-.storybook-button--primary {
-  background-color: #250D53;
-  color: white;
-  border: none;
-}
-
-.storybook-button--outlined {
-  background: transparent;
-  color: #250D53;
-  border: 2px solid #250D53;
-}
-
-.storybook-button--outlined:hover:not(:disabled) {
-  background-color: rgba(37, 13, 83, 0.05);
-}
-
-.storybook-button--option {
-  background: #FFF;
-  color: #333;
-  border: 2px solid #E0E0E0;
-}
-
-.storybook-button--option:hover:not(:disabled) {
-  border-color: #250D53;
-}
-
-.storybook-button--selected-option {
-  background: #ECC58E;
-  color: #333;
-  border: 2px solid #ECC58E;
-}
-
-.storybook-button--selected-option:hover:not(:disabled) {
-  background: #ECC58E;
-  border-color: #ECC58E;
-}
-
-.storybook-button--loading {
-  background-color: #250D53;
-  color: white;
-  border: none;
-  cursor: wait;
-}
-
-.storybook-button--success {
-  background-color: #250D53;
-  color: white;
-  border: none;
-}
-
-/* Disabled State */
-.storybook-button:disabled {
-  background-color: #a69cb6;
-  color: #F5F3F9;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-.storybook-button--outlined:disabled {
-  background: transparent;
-  background-color: #a69cb6;
-  color: #250D53;
-}
-
-/* Loading Animation */
-.button-loading {
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-  min-height: 1.2em;
-}
-
-.button-loading .dot {
+/* Loading Animation - Only keeping what Tailwind can't do */
+.dot {
   width: 8px;
   height: 8px;
   background-color: white;
@@ -97,11 +7,11 @@
   animation: loading-bounce 1.4s infinite ease-in-out both;
 }
 
-.button-loading .dot:nth-child(1) {
+.dot:nth-child(1) {
   animation-delay: -0.32s;
 }
 
-.button-loading .dot:nth-child(2) {
+.dot:nth-child(2) {
   animation-delay: -0.16s;
 }
 
@@ -114,27 +24,4 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-/* Checkmark */
-.button-checkmark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Size Styles */
-.storybook-button--small {
-  padding: 10px 16px;
-  font-size: 12px;
-}
-
-.storybook-button--medium {
-  padding: 12px 32px;
-  font-size: 20px;
-}
-
-.storybook-button--large {
-  padding: 14px 38px;
-  font-size: 22px;
 }

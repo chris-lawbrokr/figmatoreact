@@ -13,7 +13,7 @@ http://localhost:3000
 ## Getting Started Storybook
 
 ```bash
-npm run storybook 
+npm run storybook
 ```
 
 ```bash

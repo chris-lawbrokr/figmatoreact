@@ -48,13 +48,13 @@ export const Slider = ({
   const bubblePosition = `calc(${percentage}% + ${thumbOffset}px)`;
 
   return (
-    <div className="w-full max-w-[320px]">
+    <div className="w-full">
       {label && (
         <label className="block mb-4 text-2xl font-[Helvetica_Neue] font-light tracking-[-0.3px] text-text-dark">
           {label}
         </label>
       )}
-      <div className="relative mt-12">
+      <div className="relative mt-12 w-full">
         <div
           className="slider-value-bubble"
           style={{

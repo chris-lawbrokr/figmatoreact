@@ -19,7 +19,7 @@ export interface CounterProps {
 export const Counter = ({
   value: initialValue = 0,
   min = 0,
-  max = 100,
+  max = 10,
   label,
   disabled = false,
   onChange,

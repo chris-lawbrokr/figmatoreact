@@ -13,6 +13,7 @@ export default function Home() {
         label="Counter"
         onChange={() => {}}
         value={0}
+        max={10}
       />
     </main>
   );

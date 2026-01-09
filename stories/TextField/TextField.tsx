@@ -32,7 +32,7 @@ export const TextField = ({
   ...props
 }: TextFieldProps) => {
   // Base input classes
-  const baseClasses = 'w-full px-6 py-4 rounded-full text-lg font-[Helvetica_Neue] leading-[1.2] tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none';
+  const baseClasses = 'w-[196px] h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
 
   // State classes
   const stateClasses = {

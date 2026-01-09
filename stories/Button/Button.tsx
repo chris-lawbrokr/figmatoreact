@@ -33,16 +33,16 @@ export const Button = ({
 
   // Variant classes
   const variantClasses = {
-    primary: 'bg-[#250D53] text-white border-none',
-    outlined: 'bg-transparent text-[#250D53] border-2 border-[#250D53] hover:bg-[#250D53]/5 disabled:bg-[#a69cb6] disabled:text-[#250D53]',
-    option: 'bg-white text-[#333] border-2 border-[#E0E0E0] hover:border-[#250D53]',
-    'selected-option': 'bg-[#ECC58E] text-[#333] border-2 border-[#ECC58E] hover:bg-[#ECC58E] hover:border-[#ECC58E]',
-    loading: 'bg-[#250D53] text-white border-none cursor-wait',
-    success: 'bg-[#250D53] text-white border-none',
+    primary: 'bg-primary text-white border-none',
+    outlined: 'bg-transparent text-primary border-2 border-primary hover:bg-primary/5 disabled:bg-disabled disabled:text-primary',
+    option: 'bg-white text-text-dark border-2 border-border-gray hover:border-primary',
+    'selected-option': 'bg-option-selected text-text-dark border-2 border-option-selected hover:bg-option-selected hover:border-option-selected',
+    loading: 'bg-primary text-white border-none cursor-wait',
+    success: 'bg-primary text-white border-none',
   };
 
   // Disabled classes
-  const disabledClasses = 'disabled:bg-[#a69cb6] disabled:text-[#F5F3F9] disabled:cursor-not-allowed disabled:opacity-70';
+  const disabledClasses = 'disabled:bg-disabled disabled:text-disabled-text disabled:cursor-not-allowed disabled:opacity-70';
 
   // Combine all classes
   const buttonClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`;

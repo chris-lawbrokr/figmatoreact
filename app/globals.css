@@ -4,11 +4,22 @@
   --background: #ffffff;
   --foreground: #000;
   --primary: #250D53;
+  --border-gray: #E0E0E0;
+  --text-dark: #333;
+  --option-selected: #ECC58E;
+  --disabled: #a69cb6;
+  --disabled-text: #F5F3F9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-border-gray: var(--border-gray);
+  --color-text-dark: var(--text-dark);
+  --color-option-selected: var(--option-selected);
+  --color-disabled: var(--disabled);
+  --color-disabled-text: var(--disabled-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

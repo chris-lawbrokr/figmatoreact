@@ -2,7 +2,7 @@
 
 .slider-value-bubble {
   position: absolute;
-  top: -55px;
+  top: -40px;
   transform: translateX(-50%) rotate(45deg);
   background: white;
   color: #333;
@@ -13,8 +13,8 @@
   z-index: 10;
   text-align: center;
   pointer-events: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50% 50% 0 50%;
   display: flex;
   align-items: center;

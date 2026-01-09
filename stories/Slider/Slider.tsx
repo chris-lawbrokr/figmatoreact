@@ -39,6 +39,14 @@ export const Slider = ({
 
   const percentage = ((value - min) / (max - min)) * 100;
 
+  // Calculate the exact position accounting for thumb width (24px)
+  // The browser positions the thumb so that at 0% the center is at thumbWidth/2
+  // and at 100% the center is at (width - thumbWidth/2)
+  const thumbWidth = 24;
+  const ratio = (value - min) / (max - min);
+  const thumbOffset = thumbWidth * (0.5 - ratio);
+  const bubblePosition = `calc(${percentage}% + ${thumbOffset}px)`;
+
   return (
     <div className="w-full max-w-[320px]">
       {label && (
@@ -46,11 +54,11 @@ export const Slider = ({
           {label}
         </label>
       )}
-      <div className="relative mt-16">
+      <div className="relative mt-12">
         <div
           className="slider-value-bubble"
           style={{
-            left: `calc(${percentage}% + (12px - ${percentage * 0.24}px))`
+            left: bubblePosition
           }}
         >
           <span>{value}</span>

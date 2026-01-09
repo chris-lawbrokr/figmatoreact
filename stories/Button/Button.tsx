@@ -34,7 +34,7 @@ export const Button = ({
   // Variant classes
   const variantClasses = {
     primary: 'bg-primary text-white border-none',
-    outlined: 'bg-transparent text-primary border-2 border-primary hover:bg-primary/5 disabled:bg-disabled disabled:text-primary',
+    outlined: 'bg-transparent text-primary border-2 border-primary hover:bg-primary/5 disabled:bg-disabled',
     option: 'bg-white text-text-dark border-2 border-border-gray hover:border-primary',
     'selected-option': 'bg-option-selected text-text-dark border-2 border-option-selected hover:bg-option-selected hover:border-option-selected',
     loading: 'bg-primary text-white border-none cursor-wait',
@@ -42,7 +42,7 @@ export const Button = ({
   };
 
   // Disabled classes
-  const disabledClasses = 'disabled:bg-disabled disabled:text-disabled-text disabled:cursor-not-allowed disabled:opacity-70';
+  const disabledClasses = 'disabled:bg-disabled disabled:cursor-not-allowed disabled:text-gray-400';
 
   // Combine all classes
   const buttonClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`;

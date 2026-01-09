@@ -9,6 +9,9 @@
   --option-selected: #ECC58E;
   --disabled: #a69cb6;
   --disabled-text: #F5F3F9;
+  --error: #FF6B9D;
+  --error-text: #FFA8C5;
+  --success: #4CAF50;
 }
 
 @theme inline {
@@ -20,6 +23,9 @@
   --color-option-selected: var(--option-selected);
   --color-disabled: var(--disabled);
   --color-disabled-text: var(--disabled-text);
+  --color-error: var(--error);
+  --color-error-text: var(--error-text);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

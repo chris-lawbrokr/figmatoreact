@@ -1,0 +1,14 @@
+/* TextField styles - Only keeping what Tailwind can't do */
+
+/* Remove default input styling */
+input[type="text"]::-webkit-search-decoration,
+input[type="text"]::-webkit-search-cancel-button,
+input[type="text"]::-webkit-search-results-button,
+input[type="text"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Ensure no default focus outline since we're using custom border */
+input[type="text"]:focus {
+  outline: none;
+}

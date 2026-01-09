@@ -16,7 +16,10 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    variant: {
+      control: 'select',
+      options: ['primary', 'outlined', 'option', 'selected-option', 'loading', 'success'],
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
@@ -28,27 +31,80 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
+    variant: 'primary',
     label: 'Button',
   },
 };
 
-export const Secondary: Story = {
+export const Outlined: Story = {
   args: {
+    variant: 'outlined',
+    label: 'Button',
+  },
+};
+
+export const UnselectedOption: Story = {
+  args: {
+    variant: 'option',
+    label: 'Button',
+  },
+};
+
+export const SelectedOption: Story = {
+  args: {
+    variant: 'selected-option',
+    label: 'Button',
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    variant: 'loading',
+  },
+};
+
+export const Success: Story = {
+  args: {
+    variant: 'success',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    variant: 'primary',
+    label: 'Button',
+    disabled: true,
+  },
+};
+
+export const DisabledOutlined: Story = {
+  args: {
+    variant: 'outlined',
+    label: 'Button',
+    disabled: true,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    variant: 'primary',
+    size: 'small',
+    label: 'Button',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    variant: 'primary',
+    size: 'medium',
     label: 'Button',
   },
 };
 
 export const Large: Story = {
   args: {
+    variant: 'primary',
     size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
     label: 'Button',
   },
 };

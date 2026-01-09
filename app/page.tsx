@@ -6,7 +6,7 @@ export default function Home() {
       <Button
         label="Button"
         onClick={() => {}}
-        primary
+        variant="primary"
       />
     </main>
   );

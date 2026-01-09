@@ -1,39 +1,52 @@
 import './button.css';
 
 export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
+  /** Button variant style */
+  variant?: 'primary' | 'outlined' | 'option' | 'selected-option' | 'loading' | 'success';
   /** How large should the button be? */
   size?: 'small' | 'medium' | 'large';
   /** Button contents */
-  label: string;
+  label?: string;
+  /** Is button disabled */
+  disabled?: boolean;
   /** Optional click handler */
   onClick?: () => void;
 }
 
 /** Primary UI component for user interaction */
 export const Button = ({
-  primary = false,
+  variant = 'primary',
   size = 'medium',
-  backgroundColor,
   label,
+  disabled = false,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const variantClass = `storybook-button--${variant}`;
+
+  const renderContent = () => {
+    if (variant === 'loading') {
+      return (
+        <span className="button-loading">
+          <span className="dot"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+        </span>
+      );
+    }
+    if (variant === 'success') {
+      return <span className="button-checkmark">check</span>;
+    }
+    return label;
+  };
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={['storybook-button', `storybook-button--${size}`, variantClass].join(' ')}
+      disabled={disabled}
       {...props}
     >
-      {label}
-      <style jsx>{`
-        button {
-          background-color: ${backgroundColor};
-        }
-      `}</style>
+      {renderContent()}
     </button>
   );
 };

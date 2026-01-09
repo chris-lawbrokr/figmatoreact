@@ -8,7 +8,7 @@ import { RadioGroup } from "@/stories/Radio/Radio";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-screen p-12 bg-gray-50">
+    <div className="min-h-screen w-screen p-12">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-text-dark">Components</h1>
 
@@ -72,6 +72,6 @@ export default function Home() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

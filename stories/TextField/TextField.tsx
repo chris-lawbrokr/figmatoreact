@@ -32,14 +32,14 @@ export const TextField = ({
   ...props
 }: TextFieldProps) => {
   // Base input classes
-  const baseClasses = 'w-[196px] h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
+  const baseClasses = 'shadow-field w-[196px] h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
 
   // State classes
   const stateClasses = {
-    default: 'bg-white border-2 border-border-gray text-text-dark placeholder:text-gray-400 focus:border-primary',
+    default: 'bg-white text-text-dark placeholder:text-gray-400 focus:border-primary',
     error: 'bg-white border-2 border-error text-error-text placeholder:text-error-text/50',
     focus: 'bg-white border-2 border-primary text-text-dark placeholder:text-gray-400',
-    success: 'bg-white border-2 border-border-gray text-text-dark placeholder:text-gray-400',
+    success: 'bg-white text-text-dark placeholder:text-gray-400',
   };
 
   // Disabled classes

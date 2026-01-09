@@ -1,8 +1,14 @@
+import { Button } from "@/stories/Button";
+
 export default function Home() {
   return (
     <div>
       <main>
-        Storybook
+        <Button
+          label="Button"
+          onClick={() => {}}
+          primary
+        />
       </main>
     </div>
   );

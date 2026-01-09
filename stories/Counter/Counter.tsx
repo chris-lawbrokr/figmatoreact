@@ -39,12 +39,12 @@ export const Counter = ({
     onChange?.(newValue);
   };
 
-  const containerClasses = 'flex items-center justify-center w-[240px] px-4 py-2 rounded-full border-white bg-white shadow-field';
+  const containerClasses = 'flex items-center justify-between w-full px-8 py-2 rounded-full border-white bg-white shadow-field';
   const buttonClasses = 'text-primary text-2xl font-bold cursor-pointer select-none transition-all hover:scale-110 active:scale-95 disabled:text-gray-400 disabled:cursor-not-allowed disabled:hover:scale-100 flex-shrink-0';
   const valueClasses = 'text-primary text-xl font-[Helvetica_Neue] font-normal flex-1 text-center';
 
   return (
-    <div className="w-full max-w-[280px]">
+    <div className="w-full">
       {label && (
         <label className="block mb-4 text-2xl font-[Helvetica_Neue] font-light tracking-[-0.3px] text-text-dark">
           {label}

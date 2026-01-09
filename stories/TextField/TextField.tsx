@@ -42,7 +42,7 @@ export const TextField = ({
     onChange?.(newValue);
   };
   // Base input classes
-  const baseClasses = 'shadow-field w-[196px] h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
+  const baseClasses = 'shadow-field w-full h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
 
   // State classes
   const stateClasses = {
@@ -59,13 +59,13 @@ export const TextField = ({
   const inputClasses = `${baseClasses} ${stateClasses[state]} ${disabledClasses}`;
 
   return (
-    <div className="w-full max-w-[280px]">
+    <div className="w-full">
       {label && (
         <label className="block mb-4 text-2xl font-[Helvetica_Neue] font-light tracking-[-0.3px] text-text-dark">
           {label}
         </label>
       )}
-      <div className="relative inline-block">
+      <div className="relative w-full">
         <input
           type="text"
           className={inputClasses}

@@ -46,14 +46,14 @@ export const Slider = ({
           {label}
         </label>
       )}
-      <div className="relative pt-12">
+      <div className="relative mt-16">
         <div
           className="slider-value-bubble"
           style={{
             left: `calc(${percentage}% + (12px - ${percentage * 0.24}px))`
           }}
         >
-          {value}
+          <span>{value}</span>
         </div>
         <input
           type="range"

@@ -42,7 +42,7 @@ export const Button = ({
   };
 
   // Disabled classes
-  const disabledClasses = 'disabled:bg-disabled disabled:cursor-not-allowed disabled:text-gray-400';
+  const disabledClasses = 'disabled:bg-disabled disabled:cursor-not-allowed disabled:text-primary';
 
   // Combine all classes
   const buttonClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`;

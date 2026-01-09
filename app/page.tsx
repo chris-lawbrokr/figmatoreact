@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen w-screen p-12 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-text-dark">Component Showcase</h1>
+        <h1 className="text-4xl font-bold mb-8 text-text-dark">Components</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Buttons */}
@@ -29,9 +29,9 @@ export default function Home() {
           <section className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold mb-6 text-text-dark">Text Fields</h2>
             <div className="flex flex-col gap-4">
-              <TextField label="Empty Field" placeholder="Enter text" onChange={() => {}} />
-              <TextField label="Error Field" state="error" value="John" onChange={() => {}} />
-              <TextField label="Success Field" state="success" value="John" onChange={() => {}} />
+              <TextField label="Empty Field" placeholder="Enter text" />
+              <TextField label="Error Field" state="error" value="John" />
+              <TextField label="Success Field" state="success" value="John" />
             </div>
           </section>
 

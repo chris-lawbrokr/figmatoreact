@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './textfield.css';
 
 export interface TextFieldProps {
@@ -23,7 +24,7 @@ export interface TextFieldProps {
 export const TextField = ({
   state = 'default',
   placeholder = '',
-  value = '',
+  value: controlledValue,
   label,
   disabled = false,
   onChange,
@@ -31,6 +32,15 @@ export const TextField = ({
   onBlur,
   ...props
 }: TextFieldProps) => {
+  const [internalValue, setInternalValue] = useState('');
+  const value = controlledValue !== undefined ? controlledValue : internalValue;
+
+  const handleChange = (newValue: string) => {
+    if (controlledValue === undefined) {
+      setInternalValue(newValue);
+    }
+    onChange?.(newValue);
+  };
   // Base input classes
   const baseClasses = 'shadow-field w-[196px] h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
 
@@ -55,21 +65,21 @@ export const TextField = ({
           {label}
         </label>
       )}
-      <div className="relative">
+      <div className="relative inline-block">
         <input
           type="text"
           className={inputClasses}
           placeholder={placeholder}
           value={value}
           disabled={disabled}
-          onChange={(e) => onChange?.(e.target.value)}
+          onChange={(e) => handleChange(e.target.value)}
           onFocus={onFocus}
           onBlur={onBlur}
           {...props}
         />
         {state === 'success' && (
-          <div className="absolute right-4 top-1/2 -translate-y-1/2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 13l4 4L19 7" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </div>

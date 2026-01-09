@@ -26,33 +26,6 @@ export const Default: Story = {
   },
 };
 
-export const AtMinimum: Story = {
-  args: {
-    value: 0,
-    label: 'Slider',
-    min: 0,
-    max: 100,
-  },
-};
-
-export const AtMaximum: Story = {
-  args: {
-    value: 100,
-    label: 'Slider',
-    min: 0,
-    max: 100,
-  },
-};
-
-export const MidRange: Story = {
-  args: {
-    value: 50,
-    label: 'Slider',
-    min: 0,
-    max: 100,
-  },
-};
-
 export const CustomRange: Story = {
   args: {
     value: 5,
@@ -79,13 +52,5 @@ export const Disabled: Story = {
     min: 0,
     max: 100,
     disabled: true,
-  },
-};
-
-export const WithoutLabel: Story = {
-  args: {
-    value: 30,
-    min: 0,
-    max: 100,
   },
 };

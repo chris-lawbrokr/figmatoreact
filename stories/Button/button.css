@@ -1,5 +1,7 @@
 .storybook-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border: 0;
   border-radius: 3em;
@@ -82,13 +84,14 @@
 /* Loading Animation */
 .button-loading {
   display: inline-flex;
-  gap: 4px;
+  gap: 6px;
   align-items: center;
+  min-height: 1.2em;
 }
 
 .button-loading .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background-color: white;
   border-radius: 50%;
   animation: loading-bounce 1.4s infinite ease-in-out both;
@@ -115,8 +118,9 @@
 
 /* Checkmark */
 .button-checkmark {
-  /* font-size: 24px;
-  font-weight: bold; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Size Styles */
@@ -132,5 +136,5 @@
 
 .storybook-button--large {
   padding: 14px 38px;
-  font-size: 16px;
+  font-size: 22px;
 }

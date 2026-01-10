@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Image from "next/image";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,9 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
-        {/* <header className="p-4 max-w-[1800px] mx-auto">
-          Lawbrokr
-        </header> */}
+        <header className="p-4 max-w-6xl mx-auto">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            height="100"
+            width="300"
+          />
+        </header>
         <main>
           {children}  
         </main>

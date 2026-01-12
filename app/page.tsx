@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 import { Button } from '@/stories/Button/Button';
 import { Counter } from '@/stories/Counter/Counter';
@@ -9,11 +11,42 @@ import { TextField } from '@/stories/TextField/TextField';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
 import { RadioGroup } from '@/stories/Radio/Radio';
 
+const pages = [
+  { path: '/', label: 'Home - Components Demo' },
+  { path: '/signup', label: 'Sign Up' },
+  { path: '/signup/login1', label: 'Login 1' },
+  { path: '/signup/login2', label: 'Login 2' },
+  { path: '/signup/login3', label: 'Login 3' },
+];
+
 export default function Home() {
+  const router = useRouter();
+  const [selectedPage, setSelectedPage] = useState('/');
+
+  const handlePageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newPath = e.target.value;
+    setSelectedPage(newPath);
+    router.push(newPath);
+  };
+
   return (
     <>
-      <header className="p-4 max-w-6xl mx-auto">
+      <header className="p-4 max-w-6xl mx-auto flex justify-between items-center">
         <Image src="/images/logo.png" alt="Logo" height="100" width="300" />
+        <div className="flex flex-col gap-2">
+          <select
+            id="page-selector"
+            value={selectedPage}
+            onChange={handlePageChange}
+            className="px-4 py-2 border-2 border-border-gray rounded-lg bg-white text-text-dark focus:outline-none focus:border-primary cursor-pointer"
+          >
+            {pages.map((page) => (
+              <option key={page.path} value={page.path}>
+                {page.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </header>
       <main>
         <div className="min-h-screen w-screen p-12">
@@ -81,7 +114,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer>footer</footer>
     </>
   );
 }

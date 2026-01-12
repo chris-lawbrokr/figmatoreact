@@ -8,7 +8,7 @@ import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
 
-import { SelectButton, SelectButtonGroup } from '@/stories/SelectButton/SelectButton';
+import { SelectButton } from '@/stories/SelectButton/SelectButton';
 
 export default function OnboardingPage() {
   const [currentStep, setCurrentStep] = useState(1);

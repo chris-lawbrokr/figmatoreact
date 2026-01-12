@@ -16,6 +16,13 @@ http://localhost:3000
 npm run storybook
 ```
 
+open Storybook
+
+````bash
+http://localhost:6006/
+```
+
 ```bash
 npx chromatic --project-token=chpt_8646e87e8cadcf6
 ```
+````

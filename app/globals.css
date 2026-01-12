@@ -1,17 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #000;
-  --primary: #250D53;
-  --border-gray: #E0E0E0;
+  --primary: #250d53;
+  --border-gray: #e0e0e0;
   --text-dark: #333;
-  --option-selected: #ECC58E;
+  --option-selected: #ecc58e;
   --disabled: #a69cb6;
-  --disabled-text: #F5F3F9;
-  --error: #FF6B9D;
-  --error-text: #FFA8C5;
-  --success: #4CAF50;
+  --disabled-text: #f5f3f9;
+  --error: #ff6b9d;
+  --error-text: #ffa8c5;
+  --success: #4caf50;
+  --purple-link: #8460f7;
 }
 
 @theme inline {
@@ -26,8 +27,12 @@
   --color-error: var(--error);
   --color-error-text: var(--error-text);
   --color-success: var(--success);
+  --color-purple-link: var(--purple-link);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --max-w-dashboard: 1440px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -39,5 +44,17 @@
 
 /* Custom Tailwind utilities */
 @utility shadow-field {
-  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: #f9fafb;
+}
+
+.dashboard-container {
+  max-width: var(--max-w-dashboard);
+  width: 100%;
+  flex: 1;
+  max-height: min(767px, 100vh);
+  margin: 0 auto;
 }

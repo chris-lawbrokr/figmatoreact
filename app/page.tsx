@@ -17,6 +17,7 @@ const pages = [
   { path: '/signup/login1', label: 'Login 1' },
   { path: '/signup/login2', label: 'Login 2' },
   { path: '/signup/login3', label: 'Login 3' },
+  { path: '/signup/onboard', label: 'Onboarding - 5 Step Form' },
 ];
 
 export default function Home() {

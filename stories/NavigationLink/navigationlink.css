@@ -1,0 +1,7 @@
+.navigation-link {
+  transition: opacity 0.2s ease;
+}
+
+.navigation-link:hover {
+  opacity: 0.7;
+}

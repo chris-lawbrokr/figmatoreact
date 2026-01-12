@@ -83,6 +83,25 @@ export const CardTitle = React.forwardRef<HTMLHeadingElement, CardTitleProps>(
 
 CardTitle.displayName = 'CardTitle';
 
+export interface CardSubtitleProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+
+/** Card subtitle component */
+export const CardSubtitle = React.forwardRef<HTMLParagraphElement, CardSubtitleProps>(
+  ({ className = '', children, ...props }, ref) => {
+    return (
+      <p
+        ref={ref}
+        className={`text-lg font-normal leading-[150%] text-gray-500 font-helvetica ${className}`}
+        {...props}
+      >
+        {children}
+      </p>
+    );
+  }
+);
+
+CardSubtitle.displayName = 'CardSubtitle';
+
 export interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
 /** Card description component */

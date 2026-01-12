@@ -6,18 +6,20 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'elevated' | 'outlined' | 'flat';
   /** Is card clickable */
   clickable?: boolean;
+  /** Remove background color */
+  noBackground?: boolean;
 }
 
 /** Main card container component */
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
-    { variant = 'elevated', clickable = false, className = '', children, onClick, ...props },
+    { variant = 'elevated', clickable = false, noBackground = false, className = '', children, onClick, ...props },
     ref
   ) => {
     // Base card classes
-    const baseClasses = 'p-6 bg-white rounded-lg w-full flex flex-col gap-6';
+    const baseClasses = `p-6 ${noBackground ? '' : 'bg-white'} rounded-lg w-full flex flex-col gap-6`;
 
-    // Variant classes
+    // Variant classes (skip if noBackground is true)
     const variantClasses = {
       elevated: 'shadow-lg hover:shadow-xl',
       outlined: 'border-2 border-border-gray hover:border-primary',
@@ -28,7 +30,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const clickableClasses = clickable || onClick ? 'cursor-pointer hover:-translate-y-1' : '';
 
     // Combine all classes
-    const cardClasses = `${baseClasses} ${variantClasses[variant]} ${clickableClasses} ${className}`;
+    const cardClasses = `${baseClasses} ${noBackground ? '' : variantClasses[variant]} ${clickableClasses} ${className}`;
 
     return (
       <div

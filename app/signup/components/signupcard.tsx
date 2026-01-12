@@ -7,9 +7,9 @@ import { TextField } from '@/stories/TextField/TextField';
 import { Card, CardTitle } from '@/stories/Card/Card';
 import Link from 'next/link';
 
-export default function SignUpCard({ showLogo = true }: { showLogo?: boolean }) {
+export default function SignUpCard({ showLogo = true, noBackground = false }: { showLogo?: boolean; noBackground?: boolean }) {
   return (
-    <Card className="@container">
+    <Card className="@container" noBackground={noBackground}>
       {showLogo && <Image src="/images/logo.png" alt="Logo" height="32" width="126" />}
       <CardTitle>Welcome back</CardTitle>
       <div className="flex gap-6 flex-col @md:flex-row">

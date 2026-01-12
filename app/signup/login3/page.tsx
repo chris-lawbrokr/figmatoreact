@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <div className="flex flex-1 flex-col lg:flex-row">
       <div className="w-full h-full flex items-center justify-center p-12">
-        <SignUpCard noBackground showLogo={false} />
+        <div className="w-full max-w-4xl">
+          <SignUpCard noBackground showLogo={false} />
+        </div>
       </div>
       <div className="w-full h-full bg-primary p-18 flex items-center justify-left">
         <div className="flex flex-col gap-8">

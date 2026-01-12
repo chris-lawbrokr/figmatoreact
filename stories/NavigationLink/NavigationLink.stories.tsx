@@ -37,7 +37,7 @@ export const Next: Story = {
   },
 };
 
-export const BothDirections: Story = {
+export const BothDirections = {
   render: () => (
     <div className="flex justify-between w-80">
       <NavigationLink label="Go back" direction="prev" onClick={() => console.log('Go back')} />

@@ -1,0 +1,15 @@
+.select-button {
+  cursor: pointer;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.select-button:hover {
+  opacity: 0.9;
+}
+
+.select-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

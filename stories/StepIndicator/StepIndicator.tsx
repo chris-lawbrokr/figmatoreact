@@ -43,7 +43,9 @@ const StepDot = ({
   const textColor = status === 'active' ? 'text-gray-900' : 'text-gray-500';
 
   return (
-    <div className={`text-sm font-bold leading-[125%] font-helvetica ${textColor}`}>{number}</div>
+    <div className={`w-5 h-5 flex items-center justify-center text-sm font-bold leading-[125%] font-helvetica ${textColor}`}>
+      {number}
+    </div>
   );
 };
 

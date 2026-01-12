@@ -6,6 +6,10 @@
   --primary: #250d53;
   --border-gray: #e0e0e0;
   --text-dark: #333;
+  --gray-50: #f9fafb;
+  --gray-300: #c7c7c7;
+  --gray-500: #898989;
+  --gray-900: #3a3a3a;
   --option-selected: #ecc58e;
   --disabled: #a69cb6;
   --disabled-text: #f5f3f9;
@@ -21,6 +25,10 @@
   --color-primary: var(--primary);
   --color-border-gray: var(--border-gray);
   --color-text-dark: var(--text-dark);
+  --color-gray-50: var(--gray-50);
+  --color-gray-300: var(--gray-300);
+  --color-gray-500: var(--gray-500);
+  --color-gray-900: var(--gray-900);
   --color-option-selected: var(--option-selected);
   --color-disabled: var(--disabled);
   --color-disabled-text: var(--disabled-text);

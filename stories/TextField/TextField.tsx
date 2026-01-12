@@ -2,6 +2,10 @@ import { useState } from 'react';
 import './textfield.css';
 
 export interface TextFieldProps {
+  /** Text field variant */
+  variant?: 'default' | 'form';
+  /** Border radius style */
+  borderRadius?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   /** Text field state */
   state?: 'default' | 'error' | 'focus' | 'success';
   /** Placeholder text */
@@ -22,6 +26,8 @@ export interface TextFieldProps {
 
 /** Text input field component with various states */
 export const TextField = ({
+  variant = 'default',
+  borderRadius,
   state = 'default',
   placeholder = '',
   value: controlledValue,
@@ -41,27 +47,57 @@ export const TextField = ({
     }
     onChange?.(newValue);
   };
-  // Base input classes
-  const baseClasses = 'shadow-field w-full h-[43px] px-6 py-3 rounded-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border';
 
-  // State classes
-  const stateClasses = {
+  // Determine default border radius based on variant if not explicitly set
+  const defaultBorderRadius = variant === 'form' ? 'lg' : 'full';
+  const effectiveBorderRadius = borderRadius || defaultBorderRadius;
+
+  // Border radius classes
+  const borderRadiusClasses = {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    full: 'rounded-full',
+  };
+
+  // Base input classes (common to all variants)
+  const baseClasses = 'w-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border flex items-center';
+
+  // Variant-specific classes (without border radius)
+  const variantClasses = {
+    default: 'shadow-field h-[43px] px-6 py-3',
+    form: 'h-auto px-4 py-3 border border-gray-300 bg-gray-50',
+  };
+
+  // State classes for default variant
+  const defaultStateClasses = {
     default: 'bg-white text-text-dark placeholder:text-gray-400 focus:border-primary',
     error: 'bg-white border-2 border-error text-error-text placeholder:text-error-text/50',
     focus: 'bg-white border-2 border-primary text-text-dark placeholder:text-gray-400',
     success: 'bg-white text-text-dark placeholder:text-gray-400',
   };
 
+  // State classes for form variant
+  const formStateClasses = {
+    default: 'text-text-dark placeholder:text-gray-400 focus:border-primary',
+    error: 'border-error text-error-text placeholder:text-error-text/50 bg-error/5',
+    focus: 'border-primary text-text-dark placeholder:text-gray-400',
+    success: 'text-text-dark placeholder:text-gray-400 border-success',
+  };
+
+  const stateClasses = variant === 'form' ? formStateClasses : defaultStateClasses;
+
   // Disabled classes
   const disabledClasses = 'disabled:bg-disabled/20 disabled:cursor-not-allowed disabled:text-gray-400';
 
   // Combine all classes
-  const inputClasses = `${baseClasses} ${stateClasses[state]} ${disabledClasses}`;
+  const inputClasses = `${baseClasses} ${variantClasses[variant]} ${borderRadiusClasses[effectiveBorderRadius]} ${stateClasses[state]} ${disabledClasses}`;
 
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-4 text-2xl font-[Helvetica_Neue] font-light tracking-[-0.3px] text-text-dark">
+        <label className="block mb-2 text-sm font-[Helvetica_Neue] font-normal leading-[150%] text-gray-900">
           {label}
         </label>
       )}

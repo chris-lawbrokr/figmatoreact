@@ -20,6 +20,10 @@ const meta = {
       control: 'select',
       options: ['primary', 'outlined', 'option', 'selected-option', 'loading', 'success'],
     },
+    borderRadius: {
+      control: 'select',
+      options: ['none', 'sm', 'md', 'lg', 'full'],
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
@@ -106,5 +110,46 @@ export const Large: Story = {
     variant: 'primary',
     size: 'large',
     label: 'Button',
+  },
+};
+
+// Border radius variants
+export const BorderRadiusNone: Story = {
+  args: {
+    variant: 'primary',
+    borderRadius: 'none',
+    label: 'Sharp Corners',
+  },
+};
+
+export const BorderRadiusSm: Story = {
+  args: {
+    variant: 'primary',
+    borderRadius: 'sm',
+    label: 'Small Radius',
+  },
+};
+
+export const BorderRadiusMd: Story = {
+  args: {
+    variant: 'primary',
+    borderRadius: 'md',
+    label: 'Medium Radius',
+  },
+};
+
+export const BorderRadiusLg: Story = {
+  args: {
+    variant: 'primary',
+    borderRadius: 'lg',
+    label: 'Large Radius',
+  },
+};
+
+export const BorderRadiusFull: Story = {
+  args: {
+    variant: 'primary',
+    borderRadius: 'full',
+    label: 'Pill Shape (Default)',
   },
 };

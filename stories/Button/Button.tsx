@@ -5,6 +5,8 @@ export interface ButtonProps {
   variant?: 'primary' | 'outlined' | 'option' | 'selected-option' | 'loading' | 'success';
   /** How large should the button be? */
   size?: 'small' | 'medium' | 'large';
+  /** Border radius style */
+  borderRadius?: 'none' | 'sm' | 'md' | 'lg' | 'full';
   /** Button contents */
   label?: string;
   /** Is button disabled */
@@ -17,12 +19,22 @@ export interface ButtonProps {
 export const Button = ({
   variant = 'primary',
   size = 'medium',
+  borderRadius = 'full',
   label,
   disabled = false,
   ...props
 }: ButtonProps) => {
-  // Base button classes
-  const baseClasses = 'inline-flex items-center justify-center cursor-pointer border-0 rounded-full text-center font-[Helvetica_Neue] font-normal leading-[1.2] tracking-[-0.3px] transition-all duration-200 ease-in-out';
+  // Border radius classes
+  const borderRadiusClasses = {
+    none: 'rounded-none',
+    sm: 'rounded-sm',
+    md: 'rounded-md',
+    lg: 'rounded-lg',
+    full: 'rounded-full',
+  };
+
+  // Base button classes (without border radius)
+  const baseClasses = 'inline-flex items-center justify-center cursor-pointer border-0 text-center font-[Helvetica_Neue] font-normal leading-[1.2] tracking-[-0.3px] transition-all duration-200 ease-in-out';
 
   // Size classes
   const sizeClasses = {
@@ -45,7 +57,7 @@ export const Button = ({
   const disabledClasses = 'disabled:bg-disabled disabled:cursor-not-allowed disabled:text-primary';
 
   // Combine all classes
-  const buttonClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`;
+  const buttonClasses = `${baseClasses} ${borderRadiusClasses[borderRadius]} ${sizeClasses[size]} ${variantClasses[variant]} ${disabledClasses}`;
 
   const renderContent = () => {
     if (variant === 'loading') {

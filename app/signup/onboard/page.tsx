@@ -73,13 +73,15 @@ export default function OnboardingPage() {
               <div className="flex justify-center">
                 <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
               </div>
-              <StepIndicator
-                steps={[
-                  { label: 'Personal Info', status: 'completed' },
-                  { label: 'Account Info', status: 'active' },
-                  { label: 'Confirmation', status: 'inactive' },
-                ]}
-              />
+              <div className="my-8">
+                <StepIndicator
+                  steps={[
+                    { label: 'Personal Info', status: 'completed' },
+                    { label: 'Account Info', status: 'active' },
+                    { label: 'Confirmation', status: 'inactive' },
+                  ]}
+                />
+              </div>
               <CardTitle>Cover your bases</CardTitle>
               <CardSubtitle>Add your terms of service and privacy policy URLs.</CardSubtitle>
               <TextField

@@ -39,27 +39,27 @@ export default function Home() {
 
   return (
     <>
-      <header className="max-w-6xl mx-auto flex flex-col gap-6 pt-6">
-        <Image src="/images/logo.png" alt="Logo" height="100" width="300" />
-        <div className="flex flex-col gap-2">
-          <select
-            id="page-selector"
-            value={selectedPage}
-            onChange={handlePageChange}
-            className="px-4 py-2 border-2 border-border-gray rounded-lg bg-white text-text-dark focus:outline-none focus:border-primary cursor-pointer"
-          >
-            {pages.map((page) => (
-              <option key={page.path} value={page.path}>
-                {page.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      </header>
       <main>
-        <div className="min-h-screen w-screen p-12 pt-6">
+        <div className="min-h-screen w-screen p-12">
+          <div className="max-w-6xl mx-auto flex flex-col gap-6 pb-6">
+            <Image src="/images/logo.png" alt="Logo" height="100" width="300" />
+            <div className="flex flex-col gap-2">
+              <select
+                id="page-selector"
+                value={selectedPage}
+                onChange={handlePageChange}
+                className="px-4 py-2 border-2 border-border-gray rounded-lg bg-white text-text-dark focus:outline-none focus:border-primary cursor-pointer"
+              >
+                {pages.map((page) => (
+                  <option key={page.path} value={page.path}>
+                    {page.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl font-bold mb-8 text-text-dark">Components</h1>
+            <h1 className="text-4xl font-bold mb-6 text-text-dark">Components</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Buttons */}
               <section className="bg-white p-8 rounded-lg shadow-md">

@@ -77,7 +77,6 @@ export const Menu = () => {
         <Link href="/" aria-label="Go to home">
           <Logo height={50} width={150} />
         </Link>
-
         <nav className="mt-2 flex flex-col gap-2">
           {menuItems.map((item) => (
             <a

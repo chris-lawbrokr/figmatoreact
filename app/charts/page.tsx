@@ -1,16 +1,12 @@
 'use client';
 
-import { Logo } from '@/stories/Logo/Logo';
+import { Menu } from './components/Menu';
 
 export default function ChartDashboard() {
   return (
-    <div className="flex w-full h-screen overflow-hidden">
-      {/* Sidebar */}
-      <div className="shrink-0 p-6 bg-white rounded-r-2xl shadow-[0_4px_50px_rgba(37,14,83,0.12)]">
-        <Logo height={50} width={300} />
-      </div>
+    <div className="flex flex-col md:flex-row w-full h-screen overflow-hidden">
+      <Menu />
 
-      {/* Scrollable main area */}
       <div className="@container inline-size w-full h-full overflow-y-auto">
         <div
           className="
@@ -24,12 +20,24 @@ export default function ChartDashboard() {
             p-6
           "
         >
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 1</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 2</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 3</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 4</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 5</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Item 6</div>
+          <div
+            className="
+              bg-white rounded-2xl p-6 min-h-[200px]
+              @[800px]:col-span-2
+            "
+          >
+            Wide Chart
+          </div>
+          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Chart</div>
+          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Chart</div>
+          <div
+            className="
+              bg-white rounded-2xl p-6 min-h-[200px]
+              @[800px]:col-span-2
+            "
+          >
+            Wide Chart
+          </div>
         </div>
       </div>
     </div>

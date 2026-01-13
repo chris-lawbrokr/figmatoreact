@@ -220,14 +220,26 @@ export default function OnboardingPage() {
                 edited, added, or deleted later. If you don&#8217;t see what you offer, you can
                 manually add them after your account set up is complete.
               </CardSubtitle>
-              <div className="">
+              <div className="flex flex-wrap gap-4">
                 {/* <SelectButtonGroup
                   options={['Option 1', 'Option 2', 'Option 3']}
                   selected={selectedOption}
                   onChange={setSelectedOption}
                   direction="horizontal"
                 /> */}
-                <SelectButton label="Option 1" />
+                <SelectButton label="Alcohol/Cannabis" />
+                <SelectButton label="Civil Rights" />
+                <SelectButton label="Corporate" />
+                <SelectButton label="Criminal Defense" />
+                <SelectButton label="Employment" />
+                <SelectButton label="IP" />
+                <SelectButton label="Immigration" />
+                <SelectButton label="Insolvency" />
+                <SelectButton label="Family" />
+                <SelectButton label="Litigation" />
+                <SelectButton label="Personal Injury" />
+                <SelectButton label="Real Estate" />
+                <SelectButton label="Wills and Estates" />
               </div>
               <Button borderRadius="md" label="Next" onClick={nextStep} variant="primary" />
               <div className="flex justify-between">

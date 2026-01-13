@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/stories/Button/Button';
 import { TextField } from '@/stories/TextField/TextField';
-import { Card, CardTitle, CardSubtitle } from '@/stories/Card/Card';
+import { CardTitle, CardSubtitle } from '@/stories/Card/Card';
 import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
@@ -40,7 +40,7 @@ export default function OnboardingPage() {
                 <div className="flex justify-center">
                   <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
-                <CardTitle>Welcome, Anna!</CardTitle>
+                <CardTitle as="h1">Welcome, Anna!</CardTitle>
                 <CardSubtitle>
                   There are just a couple more steps before your Lawbrokr account is ready for
                   prospects!
@@ -68,7 +68,7 @@ export default function OnboardingPage() {
                     ]}
                   />
                 </div>
-                <CardTitle>Personal information</CardTitle>
+                <CardTitle as="h1">Personal information</CardTitle>
                 <TextField
                   label="Email"
                   ariaLabel="Email address"
@@ -129,7 +129,7 @@ export default function OnboardingPage() {
                     ]}
                   />
                 </div>
-                <CardTitle>Choose your URL</CardTitle>
+                <CardTitle as="h1">Choose your URL</CardTitle>
                 <CardSubtitle>
                   This will be your main URL that all landing pages, funnels, and workflows extend
                   from.
@@ -161,7 +161,7 @@ export default function OnboardingPage() {
                     ]}
                   />
                 </div>
-                <CardTitle>Cover your bases</CardTitle>
+                <CardTitle as="h1">Cover your bases</CardTitle>
                 <CardSubtitle>Add your terms of service and privacy policy URLs.</CardSubtitle>
                 <TextField
                   label="Terms of Service"
@@ -203,7 +203,7 @@ export default function OnboardingPage() {
                     ]}
                   />
                 </div>
-                <CardTitle>Select your practice areas</CardTitle>
+                <CardTitle as="h1">Select your practice areas</CardTitle>
                 <CardSubtitle>
                   Select any practice areas that reflect what your law firm offers. These can be
                   edited, added, or deleted later. If you don&#8217;t see what you offer, you can
@@ -246,7 +246,7 @@ export default function OnboardingPage() {
                     ]}
                   />
                 </div>
-                <CardTitle>Add your branding</CardTitle>
+                <CardTitle as="h1">Add your branding</CardTitle>
                 <CardSubtitle>
                   Your logo and brand color will be displayed on your landing pages, funnels, and
                   workflows. This can be added, changed, or removed at anytime.
@@ -254,6 +254,7 @@ export default function OnboardingPage() {
                 <div className="flex gap-6 flex-col md:flex-row">
                   <DocumentUpload
                     label="Drag and drop your logo here, or:"
+                    ariaLabel="Upload your company logo"
                     accept="image/*"
                     onFileSelect={(file) => {
                       console.log('Logo uploaded:', file.name);
@@ -305,7 +306,7 @@ export default function OnboardingPage() {
                 </div>
                 <div>
                   <Icon name="pause" src="/icons/file-check.svg" size={48} />
-                  <CardTitle>Account activated!</CardTitle>
+                  <CardTitle as="h1">Account activated!</CardTitle>
                 </div>
                 <CardSubtitle>
                   Your account is now active! Log in to start creating landing pages, funnels, and

@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useState } from 'react';
+import { useRef, useState, useId } from 'react';
 
 export interface DocumentUploadProps {
   /** Callback when file is selected */
@@ -10,6 +10,10 @@ export interface DocumentUploadProps {
   label?: string;
   /** Maximum file size in bytes */
   maxSize?: number;
+  /** Aria label for accessibility */
+  ariaLabel?: string;
+  /** Input ID for label association */
+  id?: string;
 }
 
 /** Document upload component with drag and drop functionality */
@@ -18,7 +22,11 @@ export const DocumentUpload = ({
   accept = 'image/*',
   label = 'Drag and drop your logo here, or:',
   maxSize,
+  ariaLabel,
+  id: providedId,
 }: DocumentUploadProps) => {
+  const generatedId = useId();
+  const id = providedId || generatedId;
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -74,12 +82,17 @@ export const DocumentUpload = ({
         ${isDragging ? 'border-primary bg-primary/5' : 'border-gray-200 bg-gray-50'}
       `}
     >
+      <label htmlFor={id} className="sr-only">
+        {ariaLabel || label || 'Upload file'}
+      </label>
       <input
         ref={fileInputRef}
+        id={id}
         type="file"
         accept={accept}
         onChange={handleFileInput}
         className="hidden"
+        aria-label={ariaLabel || label || 'Upload file'}
       />
 
       <p className="text-base text-gray-700 mb-2">{label}</p>

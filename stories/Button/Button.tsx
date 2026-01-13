@@ -95,13 +95,7 @@ export const Button = ({
   };
 
   return (
-    <button
-      type="button"
-      className={buttonClasses}
-      disabled={disabled}
-      {...props}
-      aria-label="Button"
-    >
+    <button type="button" className={buttonClasses} disabled={disabled} {...props}>
       {renderContent()}
     </button>
   );

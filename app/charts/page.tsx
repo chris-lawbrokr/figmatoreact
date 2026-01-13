@@ -1,6 +1,8 @@
 'use client';
 
 import { Menu } from './components/Menu';
+import { BarChart } from './components/BarChart';
+import { PieChart } from './components/PieChart';
 
 export default function ChartDashboard() {
   return (
@@ -26,17 +28,91 @@ export default function ChartDashboard() {
               @[800px]:col-span-2
             "
           >
-            Wide Chart
+            <BarChart
+              title="Monthly Revenue"
+              categories={[
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec',
+              ]}
+              series={[
+                {
+                  name: 'Revenue',
+                  data: [30, 40, 35, 50, 49, 60, 70, 91, 85, 95, 100, 110],
+                },
+              ]}
+            />
           </div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Chart</div>
-          <div className="bg-white rounded-2xl p-6 min-h-[200px]">Chart</div>
+          <div className="bg-white rounded-2xl p-6 min-h-[200px]">
+            <PieChart
+              title="Product Distribution"
+              labels={['Product A', 'Product B', 'Product C', 'Product D']}
+              series={[44, 55, 13, 33]}
+            />
+          </div>
+          <div className="bg-white rounded-2xl p-6 min-h-[200px]">
+            <BarChart
+              title="Monthly Revenue"
+              categories={[
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec',
+              ]}
+              series={[
+                {
+                  name: 'Revenue',
+                  data: [30, 40, 35, 50, 49, 60, 70, 91, 85, 95, 100, 110],
+                },
+              ]}
+            />
+          </div>
           <div
             className="
               bg-white rounded-2xl p-6 min-h-[200px]
               @[800px]:col-span-2
             "
           >
-            Wide Chart
+            <BarChart
+              title="Monthly Revenue"
+              categories={[
+                'Jan',
+                'Feb',
+                'Mar',
+                'Apr',
+                'May',
+                'Jun',
+                'Jul',
+                'Aug',
+                'Sep',
+                'Oct',
+                'Nov',
+                'Dec',
+              ]}
+              series={[
+                {
+                  name: 'Revenue',
+                  data: [30, 40, 35, 50, 49, 60, 70, 91, 85, 95, 100, 110],
+                },
+              ]}
+            />
           </div>
         </div>
       </div>

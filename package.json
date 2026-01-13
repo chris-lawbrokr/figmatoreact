@@ -12,8 +12,10 @@
     "chromatic": "npx chromatic --project-token=chpt_8646e87e8cadcf6"
   },
   "dependencies": {
+    "apexcharts": "^5.3.6",
     "next": "16.1.1",
     "react": "19.2.3",
+    "react-apexcharts": "^1.9.0",
     "react-dom": "19.2.3",
     "storybook": "^10.1.11"
   },

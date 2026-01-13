@@ -10,6 +10,14 @@ import { Slider } from '@/stories/Slider/Slider';
 import { TextField } from '@/stories/TextField/TextField';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
 import { RadioGroup } from '@/stories/Radio/Radio';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/stories/Card/Card';
+import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
+import { Icon } from '@/stories/Icon/Icon';
+import { LoadingSpinner } from '@/stories/LoadingSpinner/LoadingSpinner';
+import { Logo } from '@/stories/Logo/Logo';
+import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
+import { SelectButton } from '@/stories/SelectButton/SelectButton';
+import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 
 const pages = [
   { path: '/', label: 'Home - Components Demo' },
@@ -66,6 +74,15 @@ export default function Home() {
                 </div>
               </section>
 
+              {/* Select Buttons */}
+              <section className="bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Select Buttons</h2>
+                <div className="flex flex-col gap-4">
+                  <SelectButton label="Unselected Option" onToggle={() => {}} />
+                  <SelectButton label="Selected Option" selected={true} onToggle={() => {}} />
+                </div>
+              </section>
+
               {/* Text Fields */}
               <section className="bg-white p-8 rounded-lg shadow-md">
                 <h2 className="text-2xl font-semibold mb-6 text-text-dark">Text Fields</h2>
@@ -109,6 +126,71 @@ export default function Home() {
                   ]}
                   value="option2"
                   onChange={() => {}}
+                />
+              </section>
+
+              {/* Step Indicator */}
+              <section className="bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Step Indicator</h2>
+                <StepIndicator
+                  steps={[
+                    { label: '1', status: 'completed' },
+                    { label: '2', status: 'active' },
+                    { label: '3', status: 'inactive' },
+                  ]}
+                />
+              </section>
+
+              {/* Loading Spinner */}
+              <section className="bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Loading Spinner</h2>
+                <div className="flex flex-col gap-6">
+                  {/* <LoadingSpinner size={48} /> */}
+                  <LoadingSpinner size={48} title="Loading data" subtitle="Please wait..." />
+                </div>
+              </section>
+
+              {/* Icons */}
+              <section className="bg-white p-8 rounded-lg shadow-md">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Icons</h2>
+                <div className="flex flex-wrap gap-4">
+                  <Icon name="pause" src="/icons/pause.svg" size={48} />
+                  <Icon name="x-circle" src="/icons/x-circle.svg" size={48} />
+                  <Icon name="file-check" src="/icons/file-check.svg" size={48} />
+                </div>
+              </section>
+
+              {/* Card */}
+              <section className="bg-white p-8 rounded-lg shadow-md md:col-span-2">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Cards</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Card variant="elevated">
+                    <CardHeader>
+                      <CardTitle>Elevated Card</CardTitle>
+                      <CardDescription>This card has a shadow effect for depth.</CardDescription>
+                    </CardHeader>
+                  </Card>
+                  <Card variant="outlined">
+                    <CardHeader>
+                      <CardTitle>Outlined Card</CardTitle>
+                      <CardDescription>This card has a subtle border.</CardDescription>
+                    </CardHeader>
+                  </Card>
+                  <Card variant="flat">
+                    <CardHeader>
+                      <CardTitle>Flat Card</CardTitle>
+                      <CardDescription>This card has minimal styling.</CardDescription>
+                    </CardHeader>
+                  </Card>
+                </div>
+              </section>
+
+              {/* Document Upload */}
+              <section className="bg-white p-8 rounded-lg shadow-md md:col-span-2">
+                <h2 className="text-2xl font-semibold mb-6 text-text-dark">Document Upload</h2>
+                <DocumentUpload
+                  label="Upload Document"
+                  onFileSelect={(file) => console.log('File selected:', file.name)}
                 />
               </section>
             </div>

@@ -250,16 +250,14 @@ export default function OnboardingPage() {
                 Your logo and brand color will be displayed on your landing pages, funnels, and
                 workflows. This can be added, changed, or removed at anytime.
               </CardSubtitle>
-              <div className="flex gap-6">
-                <div className="">
-                  <DocumentUpload
-                    label="Drag and drop your logo here, or:"
-                    accept="image/*"
-                    onFileSelect={(file) => {
-                      console.log('Logo uploaded:', file.name);
-                    }}
-                  />
-                </div>
+              <div className="flex gap-6 flex-col md:flex-row">
+                <DocumentUpload
+                  label="Drag and drop your logo here, or:"
+                  accept="image/*"
+                  onFileSelect={(file) => {
+                    console.log('Logo uploaded:', file.name);
+                  }}
+                />
                 <div className="flex items-center gap-6">
                   <LoadingSpinner
                     size={32}

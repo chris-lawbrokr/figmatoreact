@@ -57,6 +57,9 @@ export const TwoColumns: Story = {
 
 // Individual icon examples
 export const PauseIcon: Story = {
+  args: {
+    icons: [],
+  },
   render: () => (
     <div className="flex gap-4 items-center">
       <Icon name="pause" src="/icons/pause.svg" size={16} />

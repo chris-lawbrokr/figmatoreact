@@ -11,7 +11,7 @@ import {
 } from './Card';
 
 const meta = {
-  title: 'Example/Card',
+  title: 'Components/Card',
   component: Card,
   parameters: {
     layout: 'centered',

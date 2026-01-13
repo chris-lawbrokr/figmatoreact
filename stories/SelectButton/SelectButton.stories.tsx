@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SelectButton } from './SelectButton';
 
 const meta = {
-  title: 'Example/SelectButton',
+  title: 'Components/SelectButton',
   component: SelectButton,
   parameters: {
     layout: 'centered',

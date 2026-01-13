@@ -5,7 +5,7 @@ import { fn } from 'storybook/test';
 import { Counter } from './Counter';
 
 const meta = {
-  title: 'Example/Counter',
+  title: 'Components/Counter',
   component: Counter,
   parameters: {
     layout: 'centered',

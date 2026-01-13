@@ -5,7 +5,7 @@ import { fn } from 'storybook/test';
 import { Slider } from './Slider';
 
 const meta = {
-  title: 'Example/Slider',
+  title: 'Components/Slider',
   component: Slider,
   parameters: {
     layout: 'centered',

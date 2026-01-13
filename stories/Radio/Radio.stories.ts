@@ -5,7 +5,7 @@ import { fn } from 'storybook/test';
 import { RadioGroup } from './Radio';
 
 const meta = {
-  title: 'Example/Radio',
+  title: 'Components/Radio',
   component: RadioGroup,
   parameters: {
     layout: 'centered',

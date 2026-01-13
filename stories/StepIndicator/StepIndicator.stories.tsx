@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { StepIndicator } from './StepIndicator';
 
 const meta = {
-  title: 'Example/StepIndicator',
+  title: 'Components/StepIndicator',
   component: StepIndicator,
   parameters: {
     layout: 'centered',

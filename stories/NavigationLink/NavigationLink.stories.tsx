@@ -3,7 +3,7 @@ import { fn } from 'storybook/test';
 import { NavigationLink } from './NavigationLink';
 
 const meta = {
-  title: 'Example/NavigationLink',
+  title: 'Components/NavigationLink',
   component: NavigationLink,
   parameters: {
     layout: 'centered',

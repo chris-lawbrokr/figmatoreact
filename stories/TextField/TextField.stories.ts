@@ -5,7 +5,7 @@ import { fn } from 'storybook/test';
 import { TextField } from './TextField';
 
 const meta = {
-  title: 'Example/TextField',
+  title: 'Components/TextField',
   component: TextField,
   parameters: {
     layout: 'centered',

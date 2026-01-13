@@ -14,8 +14,6 @@ import { Card, CardHeader, CardTitle, CardDescription } from '@/stories/Card/Car
 import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
 import { Icon } from '@/stories/Icon/Icon';
 import { LoadingSpinner } from '@/stories/LoadingSpinner/LoadingSpinner';
-import { Logo } from '@/stories/Logo/Logo';
-import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
 import { SelectButton } from '@/stories/SelectButton/SelectButton';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 

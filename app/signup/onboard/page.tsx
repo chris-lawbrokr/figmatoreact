@@ -8,6 +8,7 @@ import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
 import { LoadingSpinner } from '@/stories/LoadingSpinner/LoadingSpinner';
+import { Icon } from '@/stories/Icon/Icon';
 
 import { SelectButton } from '@/stories/SelectButton/SelectButton';
 import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
@@ -30,26 +31,12 @@ export default function OnboardingPage() {
 
   const handleSubmit = () => {
     console.log('Form submitted!');
-    // Add your submit logic here
   };
 
   return (
     <div className="flex flex-1 gap-24">
       <div className="w-full flex items-center justify-center">
         <div className="w-full max-w-[627px]">
-          {/* Progress Indicator */}
-          {/* <div className="flex justify-between items-center mb-2">
-            {[1, 2, 3, 4, 5].map((step) => (
-              <div
-                key={step}
-                className={`flex-1 h-2 mx-1 rounded-full transition-colors ${
-                  step <= currentStep ? 'bg-primary' : 'bg-gray-300'
-                }`}
-              />
-            ))}
-          </div>
-          <p className="text-sm text-text-dark/60 text-right mb-4">
-            Step {currentStep} of {totalSteps}
           </p> */}
 
           {/* Step 1 */}
@@ -275,19 +262,18 @@ export default function OnboardingPage() {
                     }}
                   />
                 </div>
-                <div className="flex items-center">
-                  {/* <div>
-                    <p>Law Firm Logo.png</p>
-                    <p>Law Firm Logo.png</p>
-                  </div> */}
+                <div className="flex items-center gap-6">
                   <LoadingSpinner
                     size={32}
                     title="Law Firm Logo.png"
                     subtitle="56% 23 seconds remaining"
                   />
+                  <div className="flex gap-2">
+                    <Icon name="pause" src="/icons/pause.svg" size={16} />
+                    <Icon name="x-circle" src="/icons/x-circle.svg" size={16} />
+                  </div>
                 </div>
               </div>
-
               <TextField
                 label="Brand Hex Code"
                 onChange={() => {}}
@@ -305,26 +291,37 @@ export default function OnboardingPage() {
             </div>
           )}
 
-          {/* Navigation Buttons */}
-          {/* <div className="flex justify-between mt-6">
-            <Button
-              label="Back"
-              variant="outlined"
-              onClick={prevStep}
-              disabled={currentStep === 1}
-              borderRadius="md"
-            />
-            {currentStep < totalSteps ? (
-              <Button label="Next" variant="primary" onClick={nextStep} borderRadius="md" />
-            ) : (
+          {/* Step 7 */}
+          {currentStep === 7 && (
+            <div className="flex flex-col gap-6">
+              <div className="flex justify-center">
+                <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+              </div>
+              <div className="my-8">
+                <StepIndicator
+                  steps={[
+                    { label: 'Personal Info', status: 'completed' },
+                    { label: 'Account Info', status: 'completed' },
+                    { label: 'Confirmation', status: 'completed' },
+                  ]}
+                />
+              </div>
+              <div>
+                <Icon name="pause" src="/icons/file-check.svg" size={48} />
+                <CardTitle>Account activated!</CardTitle>
+              </div>
+              <CardSubtitle>
+                Your account is now active! Log in to start creating landing pages, funnels, and
+                workflows for your potential clients.
+              </CardSubtitle>
               <Button
-                label="Complete Setup"
-                variant="success"
-                onClick={handleSubmit}
                 borderRadius="md"
+                label="Log in to Your Account"
+                onClick={handleSubmit}
+                variant="primary"
               />
-            )}
-          </div> */}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -16,23 +16,19 @@ import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
 export default function OnboardingPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 7;
-
   const nextStep = () => {
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     }
   };
-
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
     }
   };
-
   const handleSubmit = () => {
     console.log('Form submitted!');
   };
-
   return (
     <div className="flex flex-1 gap-24">
       <div className="w-full flex items-center justify-center">
@@ -56,7 +52,6 @@ export default function OnboardingPage() {
               />
             </div>
           )}
-
           {/* Step 2 */}
           {currentStep === 2 && (
             <div className="flex flex-col gap-6">
@@ -113,7 +108,6 @@ export default function OnboardingPage() {
               />
             </div>
           )}
-
           {/* Step 3 */}
           {currentStep === 3 && (
             <div className="flex flex-col gap-6">
@@ -144,7 +138,6 @@ export default function OnboardingPage() {
               <Button borderRadius="md" label="Next" onClick={nextStep} variant="primary" />
             </div>
           )}
-
           {/* Step 4 */}
           {currentStep === 4 && (
             <div className="flex flex-col gap-6">
@@ -185,7 +178,6 @@ export default function OnboardingPage() {
               </div>
             </div>
           )}
-
           {/* Step 5 */}
           {currentStep === 5 && (
             <div className="flex flex-col gap-6">
@@ -229,7 +221,6 @@ export default function OnboardingPage() {
               </div>
             </div>
           )}
-
           {/* Step 6 */}
           {currentStep === 6 && (
             <div className="flex flex-col gap-6">
@@ -286,7 +277,6 @@ export default function OnboardingPage() {
               />
             </div>
           )}
-
           {/* Step 7 */}
           {currentStep === 7 && (
             <div className="flex flex-col gap-6">

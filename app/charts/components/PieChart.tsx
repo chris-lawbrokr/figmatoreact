@@ -16,7 +16,8 @@ export const PieChart = ({
   labels,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7', '#bba7ff', '#a78bfa', '#c4b5fd'],
+  // colors = ['#EDDAC4', '#e5bd8f'],
+  colors = ['#D3D3AD', '#BEB6CB', '#e8e8d3', '#dfdfc2'],
 }: PieChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);

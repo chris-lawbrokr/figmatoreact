@@ -19,7 +19,7 @@ export const AreaChart = ({
   categories,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7'],
+  colors = ['#EDDAC4', '#e5bd8f'],
 }: AreaChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);

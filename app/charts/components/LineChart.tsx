@@ -19,7 +19,7 @@ export const LineChart = ({
   categories,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7', '#bba7ff'],
+  colors = ['#D3D3AD', '#BEB6CB', '#D3D3AD'],
 }: LineChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);

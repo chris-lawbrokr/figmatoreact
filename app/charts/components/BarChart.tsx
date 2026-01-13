@@ -19,7 +19,7 @@ export const BarChart = ({
   categories,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7', '#bba7ff'],
+  colors = ['#BEB6CB', '#bba7ff'],
 }: BarChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);

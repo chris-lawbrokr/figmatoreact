@@ -221,12 +221,50 @@ export default function OnboardingPage() {
                 manually add them after your account set up is complete.
               </CardSubtitle>
               <div className="flex flex-wrap gap-4">
-                {/* <SelectButtonGroup
-                  options={['Option 1', 'Option 2', 'Option 3']}
-                  selected={selectedOption}
-                  onChange={setSelectedOption}
-                  direction="horizontal"
-                /> */}
+                <SelectButton label="Alcohol/Cannabis" />
+                <SelectButton label="Civil Rights" />
+                <SelectButton label="Corporate" />
+                <SelectButton label="Criminal Defense" />
+                <SelectButton label="Employment" />
+                <SelectButton label="IP" />
+                <SelectButton label="Immigration" />
+                <SelectButton label="Insolvency" />
+                <SelectButton label="Family" />
+                <SelectButton label="Litigation" />
+                <SelectButton label="Personal Injury" />
+                <SelectButton label="Real Estate" />
+                <SelectButton label="Wills and Estates" />
+              </div>
+              <Button borderRadius="md" label="Next" onClick={nextStep} variant="primary" />
+              <div className="flex justify-between">
+                <NavigationLink label="Go back" direction="prev" onClick={prevStep} />
+                <NavigationLink label="Skip this step" direction="next" onClick={nextStep} />
+              </div>
+            </div>
+          )}
+
+          {/* Step 6 */}
+          {currentStep === 6 && (
+            <div className="flex flex-col gap-6">
+              <div className="flex justify-center">
+                <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+              </div>
+              <div className="my-8">
+                <StepIndicator
+                  steps={[
+                    { label: 'Personal Info', status: 'completed' },
+                    { label: 'Account Info', status: 'active' },
+                    { label: 'Confirmation', status: 'inactive' },
+                  ]}
+                />
+              </div>
+              <CardTitle>Select your practice areas</CardTitle>
+              <CardSubtitle>
+                Select any practice areas that reflect what your law firm offers. These can be
+                edited, added, or deleted later. If you don&#8217;t see what you offer, you can
+                manually add them after your account set up is complete.
+              </CardSubtitle>
+              <div className="flex flex-wrap gap-4">
                 <SelectButton label="Alcohol/Cannabis" />
                 <SelectButton label="Civil Rights" />
                 <SelectButton label="Corporate" />

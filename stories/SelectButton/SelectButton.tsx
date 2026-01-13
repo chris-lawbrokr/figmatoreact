@@ -28,7 +28,7 @@ export const SelectButton = React.forwardRef<HTMLButtonElement, SelectButtonProp
 
     const baseClasses = 'flex px-3 py-2 justify-center items-center gap-2 rounded-lg transition-all cursor-pointer';
     const selectedClasses = isSelected
-      ? 'bg-[#6538F5] text-white border-none'
+      ? 'bg-[#6538F5] text-white border border-transparent'
       : 'bg-white text-text-dark border border-[#744CF6]';
 
     return (

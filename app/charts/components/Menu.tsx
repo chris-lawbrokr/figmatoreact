@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Logo } from '@/stories/Logo/Logo';
 
 const menuItems = [
@@ -16,7 +17,10 @@ export const Menu = () => {
     <>
       {/* Mobile Header with Hamburger */}
       <div className="md:hidden flex items-center justify-between p-4 bg-white shadow-[0_4px_50px_rgba(37,14,83,0.12)] relative z-20">
-        <Logo height={40} width={200} />
+        <Link href="/" aria-label="Go to home">
+          <Logo height={40} width={200} />
+        </Link>
+
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
@@ -70,8 +74,11 @@ export const Menu = () => {
 
       {/* Desktop Sidebar */}
       <div className="hidden md:block shrink-0 p-6 bg-white rounded-r-2xl shadow-[0_4px_50px_rgba(37,14,83,0.12)]">
-        <Logo height={50} width={300} />
-        <nav className="mt-8 flex flex-col gap-2">
+        <Link href="/" aria-label="Go to home">
+          <Logo height={50} width={150} />
+        </Link>
+
+        <nav className="mt-2 flex flex-col gap-2">
           {menuItems.map((item) => (
             <a
               key={item.label}

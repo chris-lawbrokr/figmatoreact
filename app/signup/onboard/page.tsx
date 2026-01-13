@@ -7,6 +7,7 @@ import { Card, CardTitle, CardSubtitle } from '@/stories/Card/Card';
 import { NavigationLink } from '@/stories/NavigationLink/NavigationLink';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
+import { LoadingSpinner } from '@/stories/LoadingSpinner/LoadingSpinner';
 
 import { SelectButton } from '@/stories/SelectButton/SelectButton';
 import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
@@ -264,14 +265,27 @@ export default function OnboardingPage() {
                 Your logo and brand color will be displayed on your landing pages, funnels, and
                 workflows. This can be added, changed, or removed at anytime.
               </CardSubtitle>
-              <div className="flex">
-                <DocumentUpload
-                  label="Drag and drop your logo here, or:"
-                  accept="image/*"
-                  onFileSelect={(file) => {
-                    console.log('Logo uploaded:', file.name);
-                  }}
-                />
+              <div className="flex gap-6">
+                <div className="">
+                  <DocumentUpload
+                    label="Drag and drop your logo here, or:"
+                    accept="image/*"
+                    onFileSelect={(file) => {
+                      console.log('Logo uploaded:', file.name);
+                    }}
+                  />
+                </div>
+                <div className="flex items-center">
+                  {/* <div>
+                    <p>Law Firm Logo.png</p>
+                    <p>Law Firm Logo.png</p>
+                  </div> */}
+                  <LoadingSpinner
+                    size={32}
+                    title="Law Firm Logo.png"
+                    subtitle="56% 23 seconds remaining"
+                  />
+                </div>
               </div>
 
               <TextField

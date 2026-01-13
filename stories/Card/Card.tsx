@@ -121,7 +121,7 @@ export const CardDescription = React.forwardRef<HTMLParagraphElement, CardDescri
     return (
       <p
         ref={ref}
-        className={`text-base text-text-dark/70 tracking-[-0.3px] leading-relaxed ${className}`}
+        className={`text-base text-gray-600 tracking-[-0.3px] leading-relaxed ${className}`}
         {...props}
       >
         {children}

@@ -114,8 +114,8 @@ export const WithContent: Story = {
       </CardHeader>
       <CardContent>
         <div className="space-y-2">
-          <p className="text-sm text-text-dark/60">Additional content can go here.</p>
-          <ul className="list-disc list-inside text-sm text-text-dark/60 space-y-1">
+          <p className="text-sm text-gray-600">Additional content can go here.</p>
+          <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
             <li>Feature one</li>
             <li>Feature two</li>
             <li>Feature three</li>

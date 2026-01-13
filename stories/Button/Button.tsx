@@ -11,6 +11,8 @@ export interface ButtonProps {
   label?: string;
   /** Is button disabled */
   disabled?: boolean;
+  /** Aria label for accessibility */
+  ariaLabel?: string;
   /** Optional click handler */
   onClick?: () => void;
 }
@@ -22,6 +24,7 @@ export const Button = ({
   borderRadius = 'full',
   label,
   disabled = false,
+  ariaLabel,
   ...props
 }: ButtonProps) => {
   // Border radius classes
@@ -81,6 +84,7 @@ export const Button = ({
             viewBox="0 0 21 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M1.45815 8.23065L8.02957 15.2307L18.9581 1.23065"
@@ -94,8 +98,22 @@ export const Button = ({
     return label;
   };
 
+  // Determine accessible label
+  const getAccessibleLabel = () => {
+    if (ariaLabel) return ariaLabel;
+    if (variant === 'loading') return 'Loading';
+    if (variant === 'success') return 'Success';
+    return label;
+  };
+
   return (
-    <button type="button" className={buttonClasses} disabled={disabled} {...props}>
+    <button
+      type="button"
+      className={buttonClasses}
+      disabled={disabled}
+      aria-label={getAccessibleLabel()}
+      {...props}
+    >
       {renderContent()}
     </button>
   );

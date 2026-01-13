@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import SignUpCard from '@/app/signup/components/signupcard';
 
-export default function Home() {
+export default function Login() {
   return (
     <div className="flex flex-1 gap-24">
       <div className="w-full flex items-center justify-center">

@@ -49,6 +49,12 @@ export const Checkbox = ({
     ? 'inline-flex items-center cursor-pointer bg-white rounded-full px-6 py-3 shadow-field'
     : 'inline-flex items-center cursor-pointer';
 
+  // Get accessible label - warn in dev if missing
+  const accessibleLabel = ariaLabel || label;
+  if (process.env.NODE_ENV === 'development' && !accessibleLabel) {
+    console.warn('Checkbox: Either label or ariaLabel prop is required for accessibility');
+  }
+
   return (
     <label htmlFor={id} className={containerClasses}>
       <input
@@ -59,7 +65,7 @@ export const Checkbox = ({
         disabled={disabled}
         onChange={handleChange}
         className="checkbox-input"
-        aria-label={ariaLabel || label}
+        aria-label={accessibleLabel || 'Checkbox'}
         {...props}
       />
       {label && (

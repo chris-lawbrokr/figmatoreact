@@ -3,21 +3,24 @@
 import { useEffect, useState } from 'react';
 import { ApexOptions } from 'apexcharts';
 
-export interface PieChartProps {
+export interface LineChartProps {
   title?: string;
-  labels: string[];
-  series: number[];
+  categories: string[];
+  series: {
+    name: string;
+    data: number[];
+  }[];
   height?: number;
   colors?: string[];
 }
 
-export const PieChart = ({
+export const LineChart = ({
   title,
-  labels,
+  categories,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7', '#bba7ff', '#a78bfa', '#c4b5fd'],
-}: PieChartProps) => {
+  colors = ['#5021a8', '#8460f7', '#bba7ff'],
+}: LineChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -30,11 +33,33 @@ export const PieChart = ({
 
   const options: ApexOptions = {
     chart: {
-      id: 'pie-chart',
+      id: 'line-chart',
+      toolbar: { show: false },
     },
-    labels: labels.map(String),
+    stroke: {
+      curve: 'smooth',
+      width: 3,
+    },
+    markers: {
+      size: 4,
+    },
+    xaxis: {
+      categories,
+      labels: {
+        style: {
+          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+        },
+      },
+    },
+    yaxis: {
+      labels: {
+        style: {
+          fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+        },
+      },
+    },
     legend: {
-      position: 'bottom',
+      position: 'top',
       fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
     },
     title: title
@@ -49,18 +74,11 @@ export const PieChart = ({
         }
       : undefined,
     colors,
-    dataLabels: {
-      style: {
-        fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
-      },
-    },
   };
 
   if (!isMounted || !Chart) {
-    return <div className="flex items-center justify-center h-full">Loading chart…</div>;
+    return <div className="flex items-center justify-center h-full">Loading chart...</div>;
   }
 
-  return (
-    <Chart options={options} series={series.map(Number)} type="pie" width="100%" height={height} />
-  );
+  return <Chart options={options} series={series} type="line" width="100%" height={height} />;
 };

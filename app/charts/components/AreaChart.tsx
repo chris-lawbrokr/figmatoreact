@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ApexOptions } from 'apexcharts';
 
-export interface BarChartProps {
+export interface AreaChartProps {
   title?: string;
   categories: string[];
   series: {
@@ -14,13 +14,13 @@ export interface BarChartProps {
   colors?: string[];
 }
 
-export const BarChart = ({
+export const AreaChart = ({
   title,
   categories,
   series,
   height = 320,
-  colors = ['#5021a8', '#8460f7', '#bba7ff'],
-}: BarChartProps) => {
+  colors = ['#5021a8', '#8460f7'],
+}: AreaChartProps) => {
   const [Chart, setChart] = useState<any>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -33,15 +33,18 @@ export const BarChart = ({
 
   const options: ApexOptions = {
     chart: {
-      id: 'bar-chart',
+      id: 'area-chart',
       toolbar: { show: false },
     },
-    plotOptions: {
-      bar: {
-        borderRadius: 8,
-        dataLabels: {
-          position: 'top',
-        },
+    stroke: {
+      curve: 'smooth',
+      width: 2,
+    },
+    fill: {
+      type: 'gradient',
+      gradient: {
+        opacityFrom: 0.6,
+        opacityTo: 0.1,
       },
     },
     dataLabels: {
@@ -62,6 +65,10 @@ export const BarChart = ({
         },
       },
     },
+    legend: {
+      position: 'top',
+      fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+    },
     title: title
       ? {
           text: title,
@@ -77,8 +84,8 @@ export const BarChart = ({
   };
 
   if (!isMounted || !Chart) {
-    return <div className="flex items-center justify-center h-full">Loading chart…</div>;
+    return <div className="flex items-center justify-center h-full">Loading chart...</div>;
   }
 
-  return <Chart options={options} series={series} type="bar" width="100%" height={height} />;
+  return <Chart options={options} series={series} type="area" width="100%" height={height} />;
 };

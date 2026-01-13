@@ -1,7 +1,7 @@
 import './selectbutton.css';
 import React, { useState } from 'react';
 
-export interface SelectButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> {
+export interface SelectButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick' | 'onToggle'> {
   /** Button label */
   label: string;
   /** Initial selected state */

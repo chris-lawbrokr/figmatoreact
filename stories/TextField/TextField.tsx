@@ -73,7 +73,8 @@ export const TextField = ({
   };
 
   // Base input classes (common to all variants)
-  const baseClasses = 'w-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border flex items-center';
+  const baseClasses =
+    'w-full text-base font-[Helvetica_Neue] leading-tight tracking-[-0.3px] transition-all duration-200 ease-in-out outline-none box-border flex items-center';
 
   // Variant-specific classes (without border radius)
   const variantClasses = {
@@ -84,7 +85,7 @@ export const TextField = ({
   // State classes for default variant
   const defaultStateClasses = {
     default: 'bg-white text-text-dark placeholder:text-gray-400 focus:border-primary',
-    error: 'bg-white border-2 border-error text-error-text placeholder:text-error-text/50',
+    error: 'bg-white border-2 border-error text-error-text placeholder:text-error-text',
     focus: 'bg-white border-2 border-primary text-text-dark placeholder:text-gray-400',
     success: 'bg-white text-text-dark placeholder:text-gray-400',
   };
@@ -92,7 +93,7 @@ export const TextField = ({
   // State classes for form variant
   const formStateClasses = {
     default: 'text-text-dark placeholder:text-gray-400 focus:border-primary',
-    error: 'border-error text-error-text placeholder:text-error-text/50 bg-error/5',
+    error: 'border-error text-error-text placeholder:text-error-text bg-error/5',
     focus: 'border-primary text-text-dark placeholder:text-gray-400',
     success: 'text-text-dark placeholder:text-gray-400 border-success',
   };
@@ -100,7 +101,8 @@ export const TextField = ({
   const stateClasses = variant === 'form' ? formStateClasses : defaultStateClasses;
 
   // Disabled classes
-  const disabledClasses = 'disabled:bg-disabled/20 disabled:cursor-not-allowed disabled:text-gray-400';
+  const disabledClasses =
+    'disabled:bg-disabled/20 disabled:cursor-not-allowed disabled:text-gray-400';
 
   // Combine all classes
   const inputClasses = `${baseClasses} ${variantClasses[variant]} ${borderRadiusClasses[effectiveBorderRadius]} ${stateClasses[state]} ${disabledClasses}`;
@@ -108,7 +110,10 @@ export const TextField = ({
   return (
     <div className="w-full">
       {label && (
-        <label htmlFor={id} className="block mb-2 text-sm font-[Helvetica_Neue] font-normal leading-[150%] text-gray-900">
+        <label
+          htmlFor={id}
+          className="block mb-2 text-sm font-[Helvetica_Neue] font-normal leading-[150%] text-gray-900"
+        >
           {label}
         </label>
       )}
@@ -129,8 +134,20 @@ export const TextField = ({
         />
         {state === 'success' && (
           <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 13l4 4L19 7" stroke="#4CAF50" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 13l4 4L19 7"
+                stroke="#4CAF50"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         )}

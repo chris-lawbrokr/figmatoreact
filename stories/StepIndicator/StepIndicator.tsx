@@ -40,7 +40,7 @@ const StepDot = ({
     return <CheckmarkIcon />;
   }
 
-  const textColor = status === 'active' ? 'text-gray-900' : 'text-gray-500';
+  const textColor = status === 'active' ? 'text-gray-900' : 'text-gray-700';
 
   return (
     <div
@@ -61,7 +61,7 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps }) => {
             ? 'text-[#513D75]'
             : step.status === 'active'
               ? 'text-gray-900'
-              : 'text-gray-500';
+              : 'text-gray-700';
 
         const fontWeight = step.status === 'active' ? 'font-bold' : 'font-medium';
 

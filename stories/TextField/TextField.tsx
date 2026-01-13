@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import './textfield.css';
 
 export interface TextFieldProps {
@@ -16,6 +16,12 @@ export interface TextFieldProps {
   label?: string;
   /** Is field disabled */
   disabled?: boolean;
+  /** Is field required */
+  required?: boolean;
+  /** Aria label for accessibility */
+  ariaLabel?: string;
+  /** Input ID for label association */
+  id?: string;
   /** Optional change handler */
   onChange?: (value: string) => void;
   /** Optional focus handler */
@@ -33,11 +39,16 @@ export const TextField = ({
   value: controlledValue,
   label,
   disabled = false,
+  required = false,
+  ariaLabel,
+  id: providedId,
   onChange,
   onFocus,
   onBlur,
   ...props
 }: TextFieldProps) => {
+  const generatedId = useId();
+  const id = providedId || generatedId;
   const [internalValue, setInternalValue] = useState('');
   const value = controlledValue !== undefined ? controlledValue : internalValue;
 
@@ -97,17 +108,20 @@ export const TextField = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="block mb-2 text-sm font-[Helvetica_Neue] font-normal leading-[150%] text-gray-900">
+        <label htmlFor={id} className="block mb-2 text-sm font-[Helvetica_Neue] font-normal leading-[150%] text-gray-900">
           {label}
         </label>
       )}
       <div className="relative w-full">
         <input
           type="text"
+          id={id}
           className={inputClasses}
           placeholder={placeholder}
           value={value}
           disabled={disabled}
+          required={required}
+          aria-label={ariaLabel || label}
           onChange={(e) => handleChange(e.target.value)}
           onFocus={onFocus}
           onBlur={onBlur}

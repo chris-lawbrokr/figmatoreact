@@ -82,7 +82,7 @@ export const DocumentUpload = ({
         className="hidden"
       />
 
-      <p className="text-base text-gray-500 mb-2">{label}</p>
+      <p className="text-base text-gray-700 mb-2">{label}</p>
 
       {/* Monitor Icon */}
       <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gray-200 mb-2">

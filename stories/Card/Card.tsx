@@ -13,7 +13,15 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 /** Main card container component */
 export const Card = React.forwardRef<HTMLDivElement, CardProps>(
   (
-    { variant = 'elevated', clickable = false, noBackground = false, className = '', children, onClick, ...props },
+    {
+      variant = 'elevated',
+      clickable = false,
+      noBackground = false,
+      className = '',
+      children,
+      onClick,
+      ...props
+    },
     ref
   ) => {
     // Base card classes
@@ -91,7 +99,7 @@ export const CardSubtitle = React.forwardRef<HTMLParagraphElement, CardSubtitleP
     return (
       <p
         ref={ref}
-        className={`text-lg font-normal leading-[150%] text-gray-500 font-helvetica ${className}`}
+        className={`text-lg font-normal leading-[150%] text-gray-700 font-helvetica ${className}`}
         {...props}
       >
         {children}

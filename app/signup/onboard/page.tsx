@@ -38,7 +38,7 @@ export default function OnboardingPage() {
             {currentStep === 1 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <CardTitle>Welcome, Anna!</CardTitle>
                 <CardSubtitle>
@@ -57,7 +57,7 @@ export default function OnboardingPage() {
             {currentStep === 2 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator
@@ -69,9 +69,10 @@ export default function OnboardingPage() {
                   />
                 </div>
                 <CardTitle>Personal information</CardTitle>
-                {/* <CardSubtitle>Add your terms of service and privacy policy URLs.</CardSubtitle> */}
                 <TextField
                   label="Email"
+                  ariaLabel="Email address"
+                  required
                   onChange={() => {}}
                   placeholder="name@flowbite.com"
                   state="default"
@@ -81,6 +82,8 @@ export default function OnboardingPage() {
                 <div className="flex flex-col md:flex-row gap-4">
                   <TextField
                     label="Password"
+                    ariaLabel="Password"
+                    required
                     onChange={() => {}}
                     placeholder="••••••••••"
                     state="default"
@@ -89,6 +92,8 @@ export default function OnboardingPage() {
                   />
                   <TextField
                     label="Confirm Password"
+                    ariaLabel="Confirm password"
+                    required
                     onChange={() => {}}
                     placeholder="••••••••••"
                     state="default"
@@ -113,7 +118,7 @@ export default function OnboardingPage() {
             {currentStep === 3 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator
@@ -130,6 +135,8 @@ export default function OnboardingPage() {
                   from.
                 </CardSubtitle>
                 <TextField
+                  ariaLabel="Choose your URL"
+                  required
                   onChange={() => {}}
                   placeholder=".lawbrokr.com"
                   state="default"
@@ -143,7 +150,7 @@ export default function OnboardingPage() {
             {currentStep === 4 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator
@@ -158,6 +165,7 @@ export default function OnboardingPage() {
                 <CardSubtitle>Add your terms of service and privacy policy URLs.</CardSubtitle>
                 <TextField
                   label="Terms of Service"
+                  ariaLabel="Terms of Service URL"
                   onChange={() => {}}
                   placeholder="termsofservice.com"
                   state="default"
@@ -166,6 +174,7 @@ export default function OnboardingPage() {
                 />
                 <TextField
                   label="Privacy Policy"
+                  ariaLabel="Privacy Policy URL"
                   onChange={() => {}}
                   placeholder="privacypolicy.com"
                   state="default"
@@ -183,7 +192,7 @@ export default function OnboardingPage() {
             {currentStep === 5 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator
@@ -226,7 +235,7 @@ export default function OnboardingPage() {
             {currentStep === 6 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator
@@ -264,6 +273,7 @@ export default function OnboardingPage() {
                 </div>
                 <TextField
                   label="Brand Hex Code"
+                  ariaLabel="Brand hex color code"
                   onChange={() => {}}
                   placeholder="#000000"
                   state="default"
@@ -282,7 +292,7 @@ export default function OnboardingPage() {
             {currentStep === 7 && (
               <div className="flex flex-col gap-6">
                 <div className="flex justify-center">
-                  <Image src="/images/logo.png" alt="Logo" height="48" width="190" />
+                  <Image src="/images/logo.png" alt="Lawbrokr Logo" height="48" width="190" />
                 </div>
                 <div className="my-8">
                   <StepIndicator

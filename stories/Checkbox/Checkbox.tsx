@@ -53,7 +53,7 @@ export const Checkbox = ({
         {...props}
       />
       {label && (
-        <span className="ml-2 text-sm font-[Helvetica_Neue] font-medium leading-none text-gray-500">
+        <span className="ml-2 text-sm font-[Helvetica_Neue] font-medium leading-none text-gray-700">
           {label}
         </span>
       )}

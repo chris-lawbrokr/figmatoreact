@@ -58,7 +58,7 @@ export const Slider = ({
         <div
           className="slider-value-bubble"
           style={{
-            left: bubblePosition
+            left: bubblePosition,
           }}
         >
           <span>{value}</span>
@@ -72,8 +72,9 @@ export const Slider = ({
           onChange={handleChange}
           disabled={disabled}
           className="slider"
+          aria-label="Slider"
           style={{
-            background: `linear-gradient(to right, #a69cb6 0%, #a69cb6 ${percentage}%, #fff ${percentage}%, #fff 100%)`
+            background: `linear-gradient(to right, #a69cb6 0%, #a69cb6 ${percentage}%, #fff ${percentage}%, #fff 100%)`,
           }}
           {...props}
         />

@@ -68,6 +68,9 @@ export const PauseIcon: Story = {
 };
 
 export const XCircleIcon: Story = {
+  args: {
+    icons: [],
+  },
   render: () => (
     <div className="flex gap-4 items-center">
       <Icon name="x-circle" src="/icons/x-circle.svg" size={16} />

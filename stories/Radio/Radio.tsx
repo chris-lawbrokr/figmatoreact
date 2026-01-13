@@ -36,13 +36,10 @@ export const Radio = ({
         disabled={disabled}
         onChange={() => onChange?.(value)}
         className="radio-input"
+        aria-label="Radio input"
         {...props}
       />
-      {label && (
-        <span className="ml-3 text-lg font-[Helvetica_Neue] text-text-dark">
-          {label}
-        </span>
-      )}
+      {label && <span className="ml-3 text-lg font-[Helvetica_Neue] text-text-dark">{label}</span>}
     </label>
   );
 };

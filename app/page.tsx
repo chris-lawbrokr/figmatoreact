@@ -18,12 +18,13 @@ import { SelectButton } from '@/stories/SelectButton/SelectButton';
 import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 
 const pages = [
-  { path: '/', label: 'Home - Components Demo' },
-  { path: '/signup', label: 'Sign Up' },
-  { path: '/signup/login1', label: 'Login 1' },
-  { path: '/signup/login2', label: 'Login 2' },
-  { path: '/signup/login3', label: 'Login 3' },
-  { path: '/signup/onboard', label: 'Onboarding - 5 Step Form' },
+  { path: '/', label: 'Components' },
+  { path: '/signup', label: 'Sign Up page' },
+  { path: '/signup/login1', label: 'Login page 1' },
+  { path: '/signup/login2', label: 'Login page 2' },
+  { path: '/signup/login3', label: 'Login page 3' },
+  { path: '/signup/onboard', label: 'Onboarding Form' },
+  { path: '/charts', label: 'Chart Dashboard' },
 ];
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="p-4 max-w-6xl mx-auto flex justify-between items-center">
+      <header className="max-w-6xl mx-auto flex flex-col gap-6 pt-6">
         <Image src="/images/logo.png" alt="Logo" height="100" width="300" />
         <div className="flex flex-col gap-2">
           <select
@@ -56,7 +57,7 @@ export default function Home() {
         </div>
       </header>
       <main>
-        <div className="min-h-screen w-screen p-12">
+        <div className="min-h-screen w-screen p-12 pt-6">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl font-bold mb-8 text-text-dark">Components</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

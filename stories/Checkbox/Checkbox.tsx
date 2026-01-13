@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useId } from 'react';
 import './checkbox.css';
 
 export interface CheckboxProps {
@@ -12,6 +12,10 @@ export interface CheckboxProps {
   disabled?: boolean;
   /** Show with white pill background */
   withBackground?: boolean;
+  /** Aria label for accessibility */
+  ariaLabel?: string;
+  /** Input ID for label association */
+  id?: string;
   /** Optional change handler */
   onChange?: (checked: boolean) => void;
 }
@@ -23,9 +27,13 @@ export const Checkbox = ({
   checked: controlledChecked,
   disabled = false,
   withBackground = false,
+  ariaLabel,
+  id: providedId,
   onChange,
   ...props
 }: CheckboxProps) => {
+  const generatedId = useId();
+  const id = providedId || generatedId;
   const [internalChecked, setInternalChecked] = useState(false);
   const checked = controlledChecked !== undefined ? controlledChecked : internalChecked;
 
@@ -42,14 +50,16 @@ export const Checkbox = ({
     : 'inline-flex items-center cursor-pointer';
 
   return (
-    <label className={containerClasses}>
+    <label htmlFor={id} className={containerClasses}>
       <input
         type="checkbox"
+        id={id}
         value={value}
         checked={checked}
         disabled={disabled}
         onChange={handleChange}
         className="checkbox-input"
+        aria-label={ariaLabel || label}
         {...props}
       />
       {label && (

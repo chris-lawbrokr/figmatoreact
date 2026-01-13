@@ -34,7 +34,8 @@ export const Button = ({
   };
 
   // Base button classes (without border radius)
-  const baseClasses = 'inline-flex items-center justify-center cursor-pointer border-0 text-center font-[Helvetica_Neue] font-normal leading-[1.2] tracking-[-0.3px] transition-all duration-200 ease-in-out';
+  const baseClasses =
+    'inline-flex items-center justify-center cursor-pointer border-0 text-center font-[Helvetica_Neue] font-normal leading-[1.2] tracking-[-0.3px] transition-all duration-200 ease-in-out';
 
   // Size classes
   const sizeClasses = {
@@ -46,9 +47,11 @@ export const Button = ({
   // Variant classes
   const variantClasses = {
     primary: 'bg-primary text-white border-none',
-    outlined: 'bg-transparent text-primary border-2 border-primary hover:bg-primary/5 disabled:bg-disabled',
+    outlined:
+      'bg-transparent text-primary border-2 border-primary hover:bg-primary/5 disabled:bg-disabled',
     option: 'bg-white text-text-dark border-2 border-border-gray hover:border-primary',
-    'selected-option': 'bg-option-selected text-text-dark border-2 border-option-selected hover:bg-option-selected hover:border-option-selected',
+    'selected-option':
+      'bg-option-selected text-text-dark border-2 border-option-selected hover:bg-option-selected hover:border-option-selected',
     loading: 'bg-primary text-white border-none cursor-wait',
     success: 'bg-primary text-white border-none',
   };
@@ -72,8 +75,18 @@ export const Button = ({
     if (variant === 'success') {
       return (
         <span className="inline-flex items-center justify-center">
-          <svg width="21" height="21" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.45815 8.23065L8.02957 15.2307L18.9581 1.23065" stroke="white" strokeWidth="4"/>
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.45815 8.23065L8.02957 15.2307L18.9581 1.23065"
+              stroke="white"
+              strokeWidth="4"
+            />
           </svg>
         </span>
       );
@@ -87,6 +100,7 @@ export const Button = ({
       className={buttonClasses}
       disabled={disabled}
       {...props}
+      aria-label="Button"
     >
       {renderContent()}
     </button>

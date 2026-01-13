@@ -9,6 +9,7 @@ import { StepIndicator } from '@/stories/StepIndicator/StepIndicator';
 import { Checkbox } from '@/stories/Checkbox/Checkbox';
 
 import { SelectButton } from '@/stories/SelectButton/SelectButton';
+import { DocumentUpload } from '@/stories/DocumentUpload/DocumentUpload';
 
 export default function OnboardingPage() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -258,32 +259,35 @@ export default function OnboardingPage() {
                   ]}
                 />
               </div>
-              <CardTitle>Select your practice areas</CardTitle>
+              <CardTitle>Add your branding</CardTitle>
               <CardSubtitle>
-                Select any practice areas that reflect what your law firm offers. These can be
-                edited, added, or deleted later. If you don&#8217;t see what you offer, you can
-                manually add them after your account set up is complete.
+                Your logo and brand color will be displayed on your landing pages, funnels, and
+                workflows. This can be added, changed, or removed at anytime.
               </CardSubtitle>
-              <div className="flex flex-wrap gap-4">
-                <SelectButton label="Alcohol/Cannabis" />
-                <SelectButton label="Civil Rights" />
-                <SelectButton label="Corporate" />
-                <SelectButton label="Criminal Defense" />
-                <SelectButton label="Employment" />
-                <SelectButton label="IP" />
-                <SelectButton label="Immigration" />
-                <SelectButton label="Insolvency" />
-                <SelectButton label="Family" />
-                <SelectButton label="Litigation" />
-                <SelectButton label="Personal Injury" />
-                <SelectButton label="Real Estate" />
-                <SelectButton label="Wills and Estates" />
+              <div className="flex">
+                <DocumentUpload
+                  label="Drag and drop your logo here, or:"
+                  accept="image/*"
+                  onFileSelect={(file) => {
+                    console.log('Logo uploaded:', file.name);
+                  }}
+                />
               </div>
-              <Button borderRadius="md" label="Next" onClick={nextStep} variant="primary" />
-              <div className="flex justify-between">
-                <NavigationLink label="Go back" direction="prev" onClick={prevStep} />
-                <NavigationLink label="Skip this step" direction="next" onClick={nextStep} />
-              </div>
+
+              <TextField
+                label="Brand Hex Code"
+                onChange={() => {}}
+                placeholder="#000000"
+                state="default"
+                value=""
+                variant="form"
+              />
+              <Button
+                borderRadius="md"
+                label="Finish Account Set Up"
+                onClick={nextStep}
+                variant="primary"
+              />
             </div>
           )}
 

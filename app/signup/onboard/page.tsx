@@ -37,8 +37,6 @@ export default function OnboardingPage() {
     <div className="flex flex-1 gap-24">
       <div className="w-full flex items-center justify-center">
         <div className="w-full max-w-[627px]">
-          </p> */}
-
           {/* Step 1 */}
           {currentStep === 1 && (
             <div className="flex flex-col gap-6">

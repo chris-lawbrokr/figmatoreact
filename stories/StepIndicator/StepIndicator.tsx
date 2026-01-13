@@ -43,7 +43,9 @@ const StepDot = ({
   const textColor = status === 'active' ? 'text-gray-900' : 'text-gray-500';
 
   return (
-    <div className={`w-5 h-5 flex items-center justify-center text-sm font-bold leading-[125%] font-helvetica ${textColor}`}>
+    <div
+      className={`w-5 h-5 flex items-center justify-center text-sm font-bold leading-[125%] font-helvetica ${textColor}`}
+    >
       {number}
     </div>
   );
@@ -52,7 +54,7 @@ const StepDot = ({
 /** Step indicator for multi-step forms */
 export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps }) => {
   return (
-    <div className="flex items-center justify-center gap-8">
+    <div className="flex items-center justify-center gap-4 sm:gap-8 overflow-hidden">
       {steps.map((step, index) => {
         const textColor =
           step.status === 'completed'
@@ -67,14 +69,12 @@ export const StepIndicator: React.FC<StepIndicatorProps> = ({ steps }) => {
           <React.Fragment key={index}>
             <div className="flex flex-col items-center gap-2">
               <StepDot status={step.status} number={index + 1} />
-              <span
-                className={`text-sm leading-[125%] font-helvetica ${textColor} ${fontWeight}`}
-              >
+              <span className={`text-sm leading-[125%] font-helvetica ${textColor} ${fontWeight}`}>
                 {step.label}
               </span>
             </div>
             {index < steps.length - 1 && (
-              <div className="w-12 h-[2px] bg-gray-300 self-start mt-2" />
+              <div className="hidden md:block w-12 h-[2px] bg-gray-300 self-start mt-2" />
             )}
           </React.Fragment>
         );

@@ -12,7 +12,6 @@ const menuItems = [
 
 export const Menu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
     <>
       {/* Mobile Header with Hamburger */}
@@ -71,7 +70,6 @@ export const Menu = () => {
           </nav>
         </div>
       </div>
-
       {/* Desktop Sidebar */}
       <div className="hidden md:block shrink-0 p-6 bg-white rounded-r-2xl shadow-[0_4px_50px_rgba(37,14,83,0.12)]">
         <Link href="/" aria-label="Go to home">
